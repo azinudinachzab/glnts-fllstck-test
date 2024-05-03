@@ -1,0 +1,57 @@
+In javascript, there are several ways to access HTML elements from within your code.
+Here are some common method:
+
+1. getElementById():
+This method allows you to access an element using its unique ID attribute.
+YOu can use `document.getElementById()` function and pass the ID of the element
+as a parameter.
+
+example:
+```
+var element = document.getElementById("id");
+```
+
+2. getElementsByClassName():
+This method allows you to access elements by their class name. It returns a
+collection of elements with the specified class name.
+
+example:
+```
+var elements = document.getElementsByClassName("className");
+```
+
+3. getElementsByTagName():
+This method allows you to access elements by their tag name. It returns a
+collection of elements with the specified tag name.
+
+example:
+```
+var elements = document.getElementByTagName("tagName");
+```
+
+4. querySelector():
+This method allows you to select the first element that matches a specified CSS
+selector. It returns the first matching element.
+
+example:
+```
+var element = document.querySelector("CSS selector");
+```
+
+5. querySelectorAll():
+This method allows you to select all elements that match a specified CSS
+selector. It returns a NodeList containing all matching elements.
+
+example:
+```
+var elements = document.querySelectorAll("CSS selector");
+```
+
+6. getElementsByName():
+This method allows you to access elements by their name attribute. It returns
+a collection of elements with the specified name.
+
+example:
+```
+var elements = document.getElementsByName("name");
+```
