@@ -1,24 +1,5 @@
 WITH po_totals AS (
     SELECT
-        pr_id,
-        SUM(quantity) AS total_po_items
-    FROM
-        table_po_line
-    GROUP BY
-        pr_id
-),
-     cer_totals AS (
-         SELECT
-             pr_id,
-             SUM(quantity) AS total_cer_items
-         FROM
-             table_cer_line
-         GROUP BY
-             pr_id
-     )
-
-WITH po_totals AS (
-    SELECT
         table_po.pr_id,
         SUM(quantity) AS total_po_items
     FROM
