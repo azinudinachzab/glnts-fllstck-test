@@ -16,6 +16,27 @@ WITH po_totals AS (
          GROUP BY
              pr_id
      )
+
+WITH po_totals AS (
+    SELECT
+        table_po.pr_id,
+        SUM(quantity) AS total_po_items
+    FROM
+        table_po_line
+        left join table_po on table_po_line.po_id = table_po.id
+    GROUP BY
+        table_po.pr_id
+),
+     cer_totals AS (
+         SELECT
+             table_cer.pr_id,
+             SUM(quantity) AS total_cer_items
+         FROM
+             table_cer_line
+         left join table_cer on table_cer_line.cer_id = table_cer.id
+         GROUP BY
+             table_cer.pr_id
+)
 SELECT
     po.pr_id,
     po.total_po_items AS total_po_items,
